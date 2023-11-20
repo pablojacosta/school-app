@@ -3,11 +3,44 @@
 .roomsData {
   @include mixins.flex_container(column, center, center);
 
-  &__container {
-    background-color: var(--color-white);
-    width: 90%;
-    height: 100%;
-    padding-bottom: 2rem;
-    margin-top: 2rem;
+  .table {
+    max-width: 70%;
+    max-height: 50%;
+    border-left: 0.15rem solid var(--color-gray);
+    border-right: 0.15rem solid var(--color-gray);
+
+    .header {
+      background-color: var(--color-gray);
+      color: var(--color-white);
+    }
+
+    .row {
+      @include mixins.flex_container(row, center, center);
+      gap: 4rem;
+      border-bottom: 0.15rem solid var(--color-gray);
+      height: 4rem;
+
+      p {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+
+      .id {
+        width: 4rem;
+      }
+
+      .name {
+        width: 8rem;
+      }
+
+      .students {
+        width: 5rem;
+      }
+
+      .manage {
+        width: 10rem;
+      }
+    }
   }
 }
