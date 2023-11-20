@@ -22,7 +22,7 @@ const RoomsData = () => {
                 <p className={styles.id}>{id}</p>
                 <p className={styles.name}>{name}</p>
                 <p className={styles.students}>{students.length}</p>
-                <RoomManage />
+                <RoomManage room={room} />
               </div>
             );
           })}
