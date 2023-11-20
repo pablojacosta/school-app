@@ -15,13 +15,13 @@ const RoomsData = () => {
         </div>
         <div>
           {mockedRooms.map((room) => {
-            const { id, name, numberOfStudents } = room;
+            const { id, name, students } = room;
 
             return (
               <div className={styles.row}>
                 <p className={styles.id}>{id}</p>
                 <p className={styles.name}>{name}</p>
-                <p className={styles.students}>{numberOfStudents}</p>
+                <p className={styles.students}>{students.length}</p>
                 <RoomManage />
               </div>
             );
