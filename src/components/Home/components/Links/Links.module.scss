@@ -1,0 +1,22 @@
+@use "@styles/_mixins" as mixins;
+@use "@styles/_colors" as colors;
+
+.links {
+  margin-top: 6rem;
+  @include mixins.flex_container(column, center, center);
+  gap: 4rem;
+
+  &__rooms,
+  &__students {
+    text-decoration: none;
+    font-size: 4rem;
+    color: var(--color-gray);
+    outline: 0.5rem solid var(--color-gray);
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

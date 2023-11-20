@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
+import Intro from "./components/Intro";
+import Links from "./components/Links";
 import styles from "./Home.module.scss";
-import { ROOMS, STUDENTS } from "constants/routes";
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <h1>School App</h1>
-      <Link to={ROOMS}>ROOMS</Link>
-      <Link to={STUDENTS}>STUDENTS</Link>
+      <Intro />
+      <Links />
     </div>
   );
 };
