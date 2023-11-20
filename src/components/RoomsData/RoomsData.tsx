@@ -1,5 +1,6 @@
 import styles from "./RoomsData.module.scss";
 import { mockedRooms } from "@constants/mockedRooms";
+import RoomManage from "./components/RoomManage";
 
 const RoomsData = () => {
   return (
@@ -21,7 +22,7 @@ const RoomsData = () => {
                 <p className={styles.id}>{id}</p>
                 <p className={styles.name}>{name}</p>
                 <p className={styles.students}>{numberOfStudents}</p>
-                <p className={styles.manage}>MANAGE</p>
+                <RoomManage />
               </div>
             );
           })}
