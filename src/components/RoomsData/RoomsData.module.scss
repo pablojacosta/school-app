@@ -1,0 +1,13 @@
+@use "@styles/_mixins" as mixins;
+
+.roomsData {
+  @include mixins.flex_container(column, center, center);
+
+  &__container {
+    background-color: var(--color-white);
+    width: 90%;
+    height: 100%;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}
