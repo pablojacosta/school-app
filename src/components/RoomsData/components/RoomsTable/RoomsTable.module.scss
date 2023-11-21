@@ -2,9 +2,9 @@
 
 .roomsTable {
   width: 42rem;
-  height: 24.75rem;
-  border-left: 0.15rem solid var(--color-gray);
-  overflow-y: scroll;
+  max-height: 24.6rem;
+  border: 0.15rem solid var(--color-gray);
+  overflow-y: auto;
 
   .header {
     background-color: var(--color-gray);
@@ -14,8 +14,11 @@
   .row {
     @include mixins.flex_container(row, flex-start, center);
     gap: 4rem;
-    border-bottom: 0.15rem solid var(--color-gray);
     height: 4rem;
+
+    &:not(:last-child) {
+      border-bottom: 0.15rem solid var(--color-gray);
+    }
 
     p {
       margin: 0;
