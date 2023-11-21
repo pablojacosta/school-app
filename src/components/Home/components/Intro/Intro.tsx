@@ -7,7 +7,7 @@ const Intro = () => {
       <div className={styles.intro__text}>
         <p>Hi! Welcome to Rather Labs' School App.</p>
         <p>
-          In the "Rooms" section you'll be able to overview, create and modify
+          In the "Rooms" section you'll be able to overview, create and delete
           rooms.
         </p>
         <p>
