@@ -1,23 +1,17 @@
 @use "@styles/_mixins" as mixins;
 
 .studentsTable {
-  max-height: 24.6rem;
-  border: 0.15rem solid var(--color-gray);
-  overflow-y: auto;
-
-  .header {
-    background-color: var(--color-gray);
-    color: var(--color-white);
+  ul {
+    padding: 0;
+    margin: 0;
   }
 
-  .row {
+  .tableHeader {
     @include mixins.flex_container(row, flex-start, center);
+    background-color: var(--color-gray);
+    color: var(--color-white);
     gap: 4rem;
     height: 4rem;
-
-    &:not(:last-child) {
-      border-bottom: 0.15rem solid var(--color-gray);
-    }
 
     p {
       margin: 0;
@@ -35,6 +29,40 @@
 
     .gender {
       width: 10rem;
+    }
+  }
+
+  .tableBody {
+    max-height: 20.5rem;
+    overflow-y: auto;
+    border: 0.15rem solid var(--color-gray);
+
+    .row {
+      @include mixins.flex_container(row, flex-start, center);
+      gap: 4rem;
+      height: 4rem;
+
+      &:not(:last-child) {
+        border-bottom: 0.15rem solid var(--color-gray);
+      }
+
+      p {
+        margin: 0;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+
+      .name {
+        width: 20rem;
+      }
+
+      .age {
+        width: 4rem;
+      }
+
+      .gender {
+        width: 10rem;
+      }
     }
   }
 }

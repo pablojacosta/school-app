@@ -70,9 +70,9 @@ export const mockedRooms = [
       { name: "María Venegas", age: 11, gender: "female", room: "Room G" },
       { name: "Pablo Zambrano", age: 11, gender: "male", room: "Room G" },
       { name: "Juliana Alvarez", age: 11, gender: "female", room: "Room G" },
-      { name: "Juan Perez", age: 11, gender: "male", room: "Room G" },
-      { name: "María Venegas", age: 11, gender: "female", room: "Room G" },
-      { name: "Pablo Zambrano", age: 11, gender: "male", room: "Room G" },
+      { name: "Alberto Ramos", age: 11, gender: "male", room: "Room G" },
+      { name: "Susana Venegas", age: 11, gender: "female", room: "Room G" },
+      { name: "Norberto Farías", age: 11, gender: "male", room: "Room G" },
     ],
   },
   {
