@@ -3,10 +3,13 @@ import { mockedRooms } from "@constants/mockedData";
 import SelectAdapter from "./components/SelectAdapter";
 import styles from "./AddStudent.module.scss";
 import { ageOptions } from "utils/forms/ageOptions";
+import { useModalStore } from "store/useModalStore";
 
 const AddStudent = () => {
+  const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
+
   const onSubmit = () => {
-    console.log("SUBMITTED");
+    setShowModal(true);
   };
 
   const required = (value: string | number | readonly string[] | undefined) =>
@@ -17,7 +20,7 @@ const AddStudent = () => {
       <h1>Add Student</h1>
       <Form
         onSubmit={onSubmit}
-        render={({ handleSubmit, form }) => (
+        render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <Field name="firstName" validate={required}>
@@ -107,7 +110,11 @@ const AddStudent = () => {
             <button
               type="submit"
               className={styles.submitButton}
-              onClick={form.reset}
+              onClick={() => {
+                setShowModal(true);
+                setIsSuccess(true);
+                setIsRoom(false);
+              }}
             >
               Submit
             </button>

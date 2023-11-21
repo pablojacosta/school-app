@@ -1,7 +1,10 @@
 import { Field, Form } from "react-final-form";
 import styles from "./RoomCreate.module.scss";
+import { useModalStore } from "store/useModalStore";
 
 const RoomCreate = () => {
+  const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
+
   const onSubmit = () => {
     console.log("SUBMITTED");
   };
@@ -13,7 +16,7 @@ const RoomCreate = () => {
       <h1>Create Room</h1>
       <Form
         onSubmit={onSubmit}
-        render={({ handleSubmit, form }) => (
+        render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <Field name="roomName" validate={required}>
@@ -107,7 +110,11 @@ const RoomCreate = () => {
             <button
               type="submit"
               className={styles.submitButton}
-              onClick={form.reset}
+              onClick={() => {
+                setShowModal(true);
+                setIsSuccess(true);
+                setIsRoom(true);
+              }}
             >
               Submit
             </button>

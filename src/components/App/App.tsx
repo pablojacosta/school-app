@@ -15,8 +15,12 @@ import styles from "./App.module.scss";
 import RoomCreate from "@components/pages/RoomsData/components/RoomCreate";
 import AddStudent from "@components/pages/StudentsData/components/AddStudent";
 import "@styles/globals.scss";
+import { useModalStore } from "store/useModalStore";
+import Modal from "@components/shared/Modal";
 
 const App = () => {
+  const { showModal } = useModalStore();
+
   return (
     <div className={styles.app}>
       <Routes>
@@ -27,6 +31,7 @@ const App = () => {
         <Route path={STUDENTS} element={<StudentsData />} />
         <Route path={ADD_STUDENT} element={<AddStudent />} />
       </Routes>
+      {showModal && <Modal />}
     </div>
   );
 };
