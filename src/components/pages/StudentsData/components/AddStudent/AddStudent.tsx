@@ -2,6 +2,7 @@ import { Field, Form } from "react-final-form";
 import { mockedRooms } from "@constants/mockedData";
 import SelectAdapter from "./components/SelectAdapter";
 import styles from "./AddStudent.module.scss";
+import { ageOptions } from "utils/forms/ageOptions";
 
 const AddStudent = () => {
   const onSubmit = () => {
@@ -40,16 +41,14 @@ const AddStudent = () => {
                 )}
               </Field>
             </div>
-            <div className={styles.field}>
-              <Field name="age" validate={required}>
-                {({ input, meta }) => (
-                  <>
-                    <label className={styles.label}>Age</label>
-                    <input {...input} type="number" placeholder="Age" />
-                    {meta.error && meta.touched && <span>{meta.error}</span>}
-                  </>
-                )}
-              </Field>
+            <div className={styles.selectField}>
+              <label className={styles.label}>Age</label>
+              <Field
+                name="age"
+                component={SelectAdapter}
+                validate={required}
+                options={ageOptions}
+              />
             </div>
             <div className={styles.field}>
               <label className={styles.label}>Gender</label>
@@ -93,7 +92,7 @@ const AddStudent = () => {
                 </label>
               </div>
             </div>
-            <div className={styles.roomField}>
+            <div className={styles.selectField}>
               <label className={styles.label}>Room</label>
               <Field
                 name="room"

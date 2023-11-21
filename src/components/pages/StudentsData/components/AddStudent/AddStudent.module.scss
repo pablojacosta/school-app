@@ -35,7 +35,7 @@
       }
     }
 
-    .roomField {
+    .selectField {
       @include mixins.flex_container(row, center, center);
       gap: 1rem;
       padding-right: 1rem;
