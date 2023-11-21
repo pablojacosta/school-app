@@ -1,4 +1,7 @@
-export const mockedData = [
+import { IRoom } from "interfaces/Room";
+import { IStudent } from "interfaces/Student";
+
+export const mockedRooms: IRoom[] = [
   {
     id: 1,
     name: "Room A",
@@ -41,42 +44,42 @@ export const mockedData = [
   },
 ];
 
-export const mockedStudents = [
+export const mockedStudents: IStudent[] = [
   { name: "Juan Perez", age: 10, gender: "male", room: "Room A" },
   { name: "María Venegas", age: 10, gender: "female", room: "Room A" },
   { name: "Pablo Zambrano", age: 10, gender: "male", room: "Room A" },
-  { name: "Juliana Alvarez", age: 10, gender: "female", room: "Room A" },
+  { name: "Juliana Alvarez", age: 10, gender: "non-binary", room: "Room A" },
   { name: "Mariano Fernandez", age: 10, gender: "male", room: "Room A" },
-  { name: "Pedro Sanchez", age: 9, gender: "male", room: "Room B" },
+  { name: "Pedro Sanchez", age: 9, gender: "non-binary", room: "Room B" },
   { name: "Susana Ramos", age: 9, gender: "female", room: "Room B" },
   { name: "Miguel Rodriguez", age: 9, gender: "male", room: "Room B" },
-  { name: "Natalia García", age: 9, gender: "female", room: "Room B" },
+  { name: "Natalia García", age: 9, gender: "rather not say", room: "Room B" },
   { name: "Fernanda Graneros", age: 8, gender: "female", room: "Room C" },
   { name: "Mariano Ramos", age: 8, gender: "male", room: "Room C" },
-  { name: "Juana Rodriguez", age: 8, gender: "female", room: "Room C" },
+  { name: "Juana Rodriguez", age: 8, gender: "non-binary", room: "Room C" },
   { name: "Ignacio Katz", age: 8, gender: "male", room: "Room C" },
   { name: "Alma Benitez", age: 8, gender: "female", room: "Room C" },
   { name: "Eva Gonzalez", age: 8, gender: "female", room: "Room C" },
   { name: "Juan Sosa", age: 7, gender: "male", room: "Room D" },
   { name: "María Rosas", age: 7, gender: "female", room: "Room D" },
-  { name: "Pablo Zorba", age: 7, gender: "male", room: "Room D" },
+  { name: "Pablo Zorba", age: 7, gender: "non-binary", room: "Room D" },
   { name: "Pedro Sanchez", age: 6, gender: "male", room: "Room E" },
   { name: "Susana Rodriguez", age: 6, gender: "female", room: "Room E" },
   { name: "Fernando Rodriguez", age: 6, gender: "male", room: "Room E" },
-  { name: "Romina García", age: 6, gender: "female", room: "Room E" },
+  { name: "Romina García", age: 6, gender: "rather not say", room: "Room E" },
   { name: "Juliana Berni", age: 6, gender: "female", room: "Room E" },
-  { name: "Luciana Graneros", age: 5, gender: "female", room: "Room F" },
-  { name: "Lucas Ramos", age: 5, gender: "male", room: "Room F" },
+  { name: "Luciana Graneros", age: 5, gender: "non-binary", room: "Room F" },
+  { name: "Lucas Ramos", age: 5, gender: "rather not say", room: "Room F" },
   { name: "Juana Funes", age: 5, gender: "female", room: "Room F" },
   { name: "Andrés Katz", age: 5, gender: "male", room: "Room F" },
   { name: "Juan Falú", age: 11, gender: "male", room: "Room G" },
   { name: "Nora Venegas", age: 11, gender: "female", room: "Room G" },
-  { name: "Mariano Zambrano", age: 11, gender: "male", room: "Room G" },
+  { name: "Mariano Zambrano", age: 11, gender: "non-binary", room: "Room G" },
   { name: "Rocío Alvarez", age: 11, gender: "female", room: "Room G" },
   { name: "Alberto Morales", age: 11, gender: "male", room: "Room G" },
-  { name: "Romina Venegas", age: 11, gender: "female", room: "Room G" },
+  { name: "Romina Venegas", age: 11, gender: "rather not say", room: "Room G" },
   { name: "Norberto Farías", age: 11, gender: "male", room: "Room G" },
-  { name: "Felipe Sanchez", age: 12, gender: "male", room: "Room H" },
+  { name: "Felipe Sanchez", age: 12, gender: "non-binary", room: "Room H" },
   { name: "Susana Meijide", age: 12, gender: "female", room: "Room H" },
   { name: "Mauricio Rodriguez", age: 12, gender: "male", room: "Room H" },
   { name: "Natalia Vega", age: 12, gender: "female", room: "Room H" },
