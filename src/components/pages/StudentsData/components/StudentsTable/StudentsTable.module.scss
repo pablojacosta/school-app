@@ -1,6 +1,8 @@
 @use "@styles/_mixins" as mixins;
 
 .studentsTable {
+  width: 50rem;
+
   ul {
     padding: 0;
     margin: 0;

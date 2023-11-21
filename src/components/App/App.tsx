@@ -1,12 +1,12 @@
 import { CREATE_ROOM, HOME, ROOM, ROOMS, STUDENTS } from "constants/routes";
 import { Routes, Route } from "react-router-dom";
-import RoomsData from "@components/RoomsData";
-import StudentsData from "@components/StudentsData";
-import RoomDetails from "@components/RoomsData/components/RoomDetails";
-import Home from "@components/Home";
+import RoomsData from "@components/pages/RoomsData";
+import StudentsData from "@components/pages/StudentsData";
+import RoomDetails from "@components/pages/RoomsData/components/RoomDetails";
+import Home from "@components/pages/Home";
 import "@styles/globals.scss";
 import styles from "./App.module.scss";
-import RoomCreate from "@components/RoomsData/components/RoomCreate";
+import RoomCreate from "@components/pages/RoomsData/components/RoomCreate";
 
 const App = () => {
   return (
