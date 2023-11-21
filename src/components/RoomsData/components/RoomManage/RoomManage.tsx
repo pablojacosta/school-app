@@ -1,21 +1,17 @@
-import EyeIcon from "@components/elements/Icons/EyeIcon";
-import styles from "./RoomManage.module.scss";
-import PencilIcon from "@components/elements/Icons/PencilIcon";
-import TrashIcon from "@components/elements/Icons/TrashIcon";
 import { Link } from "react-router-dom";
 import { ROOM } from "@constants/routes";
-import { IRoom } from "interfaces/Room";
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
+import { IRoomManage } from "interfaces/RoomManage";
+import EyeIcon from "@components/elements/Icons/EyeIcon";
+import PencilIcon from "@components/elements/Icons/PencilIcon";
+import TrashIcon from "@components/elements/Icons/TrashIcon";
+import styles from "./RoomManage.module.scss";
 
-interface IRoomManage {
-  room: IRoom;
-}
-
-const RoomManage = ({ room }: IRoomManage) => {
+const RoomManage = ({ room, students }: IRoomManage) => {
   const { setRoom } = useSelectedRoomStore();
 
   const handleViewOnClick = () => {
-    setRoom(room);
+    setRoom(room, students);
   };
 
   return (

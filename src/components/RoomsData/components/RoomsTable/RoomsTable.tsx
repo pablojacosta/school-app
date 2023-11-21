@@ -1,6 +1,7 @@
 import { IRoomsTable } from "interfaces/RoomsTable";
 import styles from "./RoomsTable.module.scss";
 import RoomManage from "../RoomManage";
+import { mockedStudents } from "@constants/mockedData";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
   return (
@@ -13,14 +14,17 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
       </div>
       <ul className={styles.tableBody}>
         {roomsData.map((room) => {
-          const { id, name, students } = room;
+          const { id, name } = room;
+          const students = mockedStudents.filter(
+            (student) => student.room === name
+          );
 
           return (
-            <li className={styles.row}>
+            <li className={styles.row} key={name}>
               <p className={styles.id}>{id}</p>
               <p className={styles.name}>{name}</p>
               <p className={styles.students}>{students.length}</p>
-              <RoomManage room={room} />
+              <RoomManage room={room} students={students} />
             </li>
           );
         })}
