@@ -10,6 +10,8 @@ const AddStudent = () => {
 
   const onSubmit = () => {
     setShowModal(true);
+    setIsSuccess(true);
+    setIsRoom(false);
   };
 
   const required = (value: string | number | readonly string[] | undefined) =>
@@ -18,9 +20,8 @@ const AddStudent = () => {
   return (
     <div className={styles.addStudent}>
       <h1>Add Student</h1>
-      <Form
-        onSubmit={onSubmit}
-        render={({ handleSubmit }) => (
+      <Form onSubmit={onSubmit}>
+        {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <Field name="firstName" validate={required}>
@@ -107,20 +108,12 @@ const AddStudent = () => {
                 }))}
               />
             </div>
-            <button
-              type="submit"
-              className={styles.submitButton}
-              onClick={() => {
-                setShowModal(true);
-                setIsSuccess(true);
-                setIsRoom(false);
-              }}
-            >
+            <button type="submit" className={styles.submitButton}>
               Submit
             </button>
           </form>
         )}
-      ></Form>
+      </Form>
     </div>
   );
 };

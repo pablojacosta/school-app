@@ -6,17 +6,19 @@ const RoomCreate = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
 
   const onSubmit = () => {
-    console.log("SUBMITTED");
+    setShowModal(true);
+    setIsSuccess(true);
+    setIsRoom(false);
   };
+
   const required = (value: string | number | readonly string[] | undefined) =>
     value ? undefined : "Required";
 
   return (
     <div className={styles.roomCreate}>
       <h1>Create Room</h1>
-      <Form
-        onSubmit={onSubmit}
-        render={({ handleSubmit }) => (
+      <Form onSubmit={onSubmit}>
+        {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
               <Field name="roomName" validate={required}>
@@ -107,20 +109,12 @@ const RoomCreate = () => {
                 </label>
               </div>
             </div>
-            <button
-              type="submit"
-              className={styles.submitButton}
-              onClick={() => {
-                setShowModal(true);
-                setIsSuccess(true);
-                setIsRoom(true);
-              }}
-            >
+            <button type="submit" className={styles.submitButton}>
               Submit
             </button>
           </form>
         )}
-      ></Form>
+      </Form>
     </div>
   );
 };
