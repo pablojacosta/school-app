@@ -1,3 +1,4 @@
+import { TailSpin } from "react-loader-spinner";
 import RoomsTable from "./components/RoomsTable";
 import styles from "./RoomsData.module.scss";
 import CreateButton from "../../shared/CreateButton";
@@ -13,6 +14,11 @@ const RoomsData = () => {
       <h1>Rooms</h1>
       <CreateButton isRoom />
       {showRoomsTable && <RoomsTable roomsData={rooms} />}
+      {roomsIsLoading && (
+        <div className={styles.spinner}>
+          <TailSpin />
+        </div>
+      )}
     </div>
   );
 };
