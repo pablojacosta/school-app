@@ -1,10 +1,11 @@
 import { emptyRoom } from "@constants/emptyRoom";
 import { IRoom } from "interfaces/Room";
+import { IRoomWithStudents } from "interfaces/RoomWithStudents";
 import { IStudent } from "interfaces/Student";
 import { create } from "zustand";
 
 interface ISelectedRoomStore {
-  room: IRoom;
+  room: IRoomWithStudents;
   setRoom: (room: IRoom, students: IStudent[]) => void;
   clearStore: () => void;
 }

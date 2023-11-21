@@ -1,7 +1,8 @@
-import { IRoom } from "interfaces/Room";
+import { IRoomWithStudents } from "interfaces/RoomWithStudents";
 
-export const emptyRoom: IRoom = {
+export const emptyRoom: IRoomWithStudents = {
   id: 0,
   name: "",
   subject: "other",
+  students: [],
 };
