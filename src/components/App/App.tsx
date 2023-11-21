@@ -7,16 +7,16 @@ import {
   STUDENTS,
 } from "@constants/routes/routes";
 import { Routes, Route } from "react-router-dom";
+import { useModalStore } from "store/useModalStore";
 import RoomsData from "@components/pages/RoomsData";
 import StudentsData from "@components/pages/StudentsData";
 import RoomDetails from "@components/pages/RoomsData/components/RoomDetails";
 import Home from "@components/pages/Home";
-import styles from "./App.module.scss";
+import Modal from "@components/shared/Modal";
 import RoomCreate from "@components/pages/RoomsData/components/RoomCreate";
 import AddStudent from "@components/pages/StudentsData/components/AddStudent";
 import "@styles/globals.scss";
-import { useModalStore } from "store/useModalStore";
-import Modal from "@components/shared/Modal";
+import styles from "./App.module.scss";
 
 const App = () => {
   const { showModal } = useModalStore();
