@@ -35,6 +35,21 @@
       }
     }
 
+    .roomField {
+      @include mixins.flex_container(row, center, center);
+      gap: 1rem;
+      padding-right: 1rem;
+
+      .label {
+        padding: 1rem;
+        width: 5rem;
+      }
+
+      span {
+        color: var(--color-red);
+      }
+    }
+
     .submitButton {
       align-self: center;
       background-color: var(--color-green);

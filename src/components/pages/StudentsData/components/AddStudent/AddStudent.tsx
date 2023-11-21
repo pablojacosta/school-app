@@ -1,10 +1,13 @@
 import { Field, Form } from "react-final-form";
+import { mockedRooms } from "@constants/mockedData";
+import SelectAdapter from "./components/SelectAdapter";
 import styles from "./AddStudent.module.scss";
 
 const AddStudent = () => {
   const onSubmit = () => {
     console.log("SUBMITTED");
   };
+
   const required = (value: string | number | readonly string[] | undefined) =>
     value ? undefined : "Required";
 
@@ -90,16 +93,17 @@ const AddStudent = () => {
                 </label>
               </div>
             </div>
-            <div className={styles.field}>
-              <Field name="room" validate={required}>
-                {({ input, meta }) => (
-                  <>
-                    <label className={styles.label}>Room</label>
-                    <input {...input} type="text" placeholder="Room" />
-                    {meta.error && meta.touched && <span>{meta.error}</span>}
-                  </>
-                )}
-              </Field>
+            <div className={styles.roomField}>
+              <label className={styles.label}>Room</label>
+              <Field
+                name="room"
+                component={SelectAdapter}
+                validate={required}
+                options={mockedRooms.map((room) => ({
+                  label: room.name,
+                  value: room.name,
+                }))}
+              />
             </div>
             <button
               type="submit"
