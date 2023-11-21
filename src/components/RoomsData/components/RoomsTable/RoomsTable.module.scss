@@ -1,7 +1,7 @@
 @use "@styles/_mixins" as mixins;
 
 .roomsTable {
-  width: 42rem;
+  width: 50rem;
 
   ul {
     padding: 0;
@@ -31,6 +31,10 @@
 
     .students {
       width: 5rem;
+    }
+
+    .subject {
+      width: 4.5rem;
     }
 
     .manage {
@@ -68,6 +72,11 @@
 
       .students {
         width: 5rem;
+      }
+
+      .subject {
+        width: 4.5rem;
+        text-transform: capitalize;
       }
 
       .manage {

@@ -10,11 +10,12 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
         <p className={styles.id}>ID</p>
         <p className={styles.name}>NAME</p>
         <p className={styles.students}>STUDENTS</p>
+        <p className={styles.subject}>SUBJECT</p>
         <p className={styles.manage}>VIEW / REMOVE</p>
       </div>
       <ul className={styles.tableBody}>
         {roomsData.map((room) => {
-          const { id, name } = room;
+          const { id, name, subject } = room;
           const students = mockedStudents.filter(
             (student) => student.room === name
           );
@@ -24,6 +25,7 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
               <p className={styles.id}>{id}</p>
               <p className={styles.name}>{name}</p>
               <p className={styles.students}>{students.length}</p>
+              <p className={styles.subject}>{subject}</p>
               <RoomManage room={room} students={students} />
             </li>
           );
