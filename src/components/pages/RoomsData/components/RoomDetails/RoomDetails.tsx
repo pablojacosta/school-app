@@ -1,6 +1,6 @@
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import styles from "./RoomDetails.module.scss";
-import StudentsTable from "@components/pages/StudentsData/components/StudentsTable";
+import StudentsTable from "@components/shared/StudentsTable";
 
 const RoomDetails = () => {
   const { room } = useSelectedRoomStore();

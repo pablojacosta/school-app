@@ -3,6 +3,10 @@
 .studentsTable {
   width: 50rem;
 
+  &.showRoom {
+    width: 55rem;
+  }
+
   ul {
     padding: 0;
     margin: 0;
