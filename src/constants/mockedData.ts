@@ -63,7 +63,7 @@ export const mockedStudents: IStudent[] = [
   { name: "Juan Sosa", age: 7, gender: "male", room: "Room D" },
   { name: "María Rosas", age: 7, gender: "female", room: "Room D" },
   { name: "Pablo Zorba", age: 7, gender: "non-binary", room: "Room D" },
-  { name: "Pedro Sanchez", age: 6, gender: "male", room: "Room E" },
+  { name: "Pedro Gonzalez", age: 6, gender: "male", room: "Room E" },
   { name: "Susana Rodriguez", age: 6, gender: "female", room: "Room E" },
   { name: "Fernando Rodriguez", age: 6, gender: "male", room: "Room E" },
   { name: "Romina García", age: 6, gender: "rather not say", room: "Room E" },
