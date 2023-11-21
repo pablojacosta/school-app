@@ -8,6 +8,7 @@
     gap: 2rem;
     outline: 0.2rem solid var(--color-gray);
     border-radius: 0.5rem;
+    width: 24rem;
 
     .field {
       @include mixins.flex_container(row, center, center);
@@ -27,6 +28,10 @@
       input {
         border: 0.2rem solid var(--color-gray);
         border-radius: 0.35rem;
+      }
+
+      span {
+        color: var(--color-red);
       }
     }
 

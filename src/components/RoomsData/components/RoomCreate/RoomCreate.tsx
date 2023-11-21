@@ -2,23 +2,29 @@ import { Field, Form } from "react-final-form";
 import styles from "./RoomCreate.module.scss";
 
 const RoomCreate = () => {
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    console.log("SUBMITTED");
+  };
+  const required = (value: string | number | readonly string[] | undefined) =>
+    value ? undefined : "Required";
 
   return (
     <div className={styles.roomCreate}>
       <h1>Create Room</h1>
       <Form
         onSubmit={onSubmit}
-        render={({ handleSubmit }) => (
+        render={({ handleSubmit, form }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
-              <label className={styles.label}>Name</label>
-              <Field
-                name="roomName"
-                component={"input"}
-                type="text"
-                placeholder="Room's name"
-              />
+              <Field name="roomName" validate={required}>
+                {({ input, meta }) => (
+                  <>
+                    <label className={styles.label}>Name</label>
+                    <input {...input} type="text" placeholder="Room's name" />
+                    {meta.error && meta.touched && <span>{meta.error}</span>}
+                  </>
+                )}
+              </Field>
             </div>
             <div className={styles.field}>
               <label className={styles.label}>Subject</label>
@@ -92,12 +98,17 @@ const RoomCreate = () => {
                     component="input"
                     type="radio"
                     value="other"
+                    initialValue="other"
                   />{" "}
                   Other
                 </label>
               </div>
             </div>
-            <button type="submit" className={styles.submitButton}>
+            <button
+              type="submit"
+              className={styles.submitButton}
+              onClick={form.reset}
+            >
               Submit
             </button>
           </form>
