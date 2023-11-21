@@ -21,6 +21,7 @@ export const useSelectedRoomStore = create<ISelectedRoomStore>()((set) => ({
       room: {
         id: room.id,
         name: room.name,
+        subject: room.subject,
         students,
       },
     })),

@@ -4,12 +4,15 @@ import StudentsTable from "@components/pages/StudentsData/components/StudentsTab
 
 const RoomDetails = () => {
   const { room } = useSelectedRoomStore();
-  const { name, students } = room;
+  const { name, students, subject } = room;
+
+  console.log("room", room);
 
   return (
     <div className={styles.roomDetails}>
       <h1>Room Details</h1>
-      <h2>{name}</h2>
+      <h2 className={styles.name}>Name: {name}</h2>
+      <h2 className={styles.subject}>Subject: {subject}</h2>
       <StudentsTable studentsData={students} />
     </div>
   );
