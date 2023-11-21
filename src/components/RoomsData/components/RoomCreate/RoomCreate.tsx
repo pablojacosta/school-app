@@ -12,7 +12,7 @@ const RoomCreate = () => {
         render={({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
-              <label className={styles.label}>Room's Name</label>
+              <label className={styles.label}>Name</label>
               <Field
                 name="roomName"
                 component={"input"}
