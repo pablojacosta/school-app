@@ -1,6 +1,6 @@
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import styles from "./RoomDetails.module.scss";
-import { IStudent } from "interfaces/Student";
+import StudentsTable from "@components/StudentsData/components/StudentsTable";
 
 const RoomDetails = () => {
   const { room } = useSelectedRoomStore();
@@ -9,20 +9,8 @@ const RoomDetails = () => {
   return (
     <div className={styles.roomDetails}>
       <h1>Room Details</h1>
-      <p>Room's name: {name}</p>
-      <ul>
-        {students.map((student: IStudent) => {
-          const { name, age, gender } = student;
-
-          return (
-            <>
-              <p>{name}</p>
-              <p>{age}</p>
-              <p>{gender}</p>
-            </>
-          );
-        })}
-      </ul>
+      <h2>{name}</h2>
+      <StudentsTable studentsData={students} />
     </div>
   );
 };
