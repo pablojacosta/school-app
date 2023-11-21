@@ -10,7 +10,7 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
         <p className={styles.id}>ID</p>
         <p className={styles.name}>NAME</p>
         <p className={styles.students}>STUDENTS</p>
-        <p className={styles.manage}>MANAGE</p>
+        <p className={styles.manage}>VIEW / REMOVE</p>
       </div>
       <ul className={styles.tableBody}>
         {roomsData.map((room) => {

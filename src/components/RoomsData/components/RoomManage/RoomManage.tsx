@@ -3,7 +3,6 @@ import { ROOM } from "@constants/routes";
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import { IRoomManage } from "interfaces/RoomManage";
 import EyeIcon from "@components/elements/Icons/EyeIcon";
-import PencilIcon from "@components/elements/Icons/PencilIcon";
 import TrashIcon from "@components/elements/Icons/TrashIcon";
 import styles from "./RoomManage.module.scss";
 
@@ -24,9 +23,6 @@ const RoomManage = ({ room, students }: IRoomManage) => {
           <EyeIcon />
         </button>
       </Link>
-      <button className={styles.modifyButton}>
-        <PencilIcon />
-      </button>
       <button className={styles.deleteButton}>
         <TrashIcon />
       </button>
