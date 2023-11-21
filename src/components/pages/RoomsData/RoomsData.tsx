@@ -1,4 +1,4 @@
-import { mockedRooms } from "@constants/mockedData";
+import { mockedRooms } from "utils/mocks/mockedData";
 import RoomsTable from "./components/RoomsTable";
 import styles from "./RoomsData.module.scss";
 import CreateButton from "../../shared/CreateButton";

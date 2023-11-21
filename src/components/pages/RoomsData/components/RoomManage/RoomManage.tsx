@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROOM } from "@constants/routes";
+import { ROOM } from "@constants/routes/routes";
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import { IRoomManage } from "interfaces/RoomManage";
 import EyeIcon from "@components/elements/Icons/EyeIcon";

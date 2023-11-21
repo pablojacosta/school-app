@@ -1,7 +1,7 @@
 import { IRoomsTable } from "interfaces/RoomsTable";
 import styles from "./RoomsTable.module.scss";
 import RoomManage from "../RoomManage";
-import { mockedStudents } from "@constants/mockedData";
+import { mockedStudents } from "utils/mocks/mockedData";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
   return (

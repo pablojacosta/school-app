@@ -5,7 +5,7 @@ import {
   ROOM,
   ROOMS,
   STUDENTS,
-} from "constants/routes";
+} from "@constants/routes/routes";
 import { Routes, Route } from "react-router-dom";
 import RoomsData from "@components/pages/RoomsData";
 import StudentsData from "@components/pages/StudentsData";

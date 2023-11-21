@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROOMS, STUDENTS } from "constants/routes";
+import { ROOMS, STUDENTS } from "@constants/routes/routes";
 import styles from "./Links.module.scss";
 
 const Links = () => {

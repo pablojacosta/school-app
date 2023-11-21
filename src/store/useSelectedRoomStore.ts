@@ -1,4 +1,4 @@
-import { emptyRoom } from "@constants/emptyRoom";
+import { emptyRoom } from "utils/helpers/emptyRoom";
 import { IRoom } from "interfaces/Room";
 import { IRoomWithStudents } from "interfaces/RoomWithStudents";
 import { IStudent } from "interfaces/Student";

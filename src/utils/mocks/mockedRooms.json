@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Room A",
+        "subject": "math"
+    },
+    {
+        "id": 2,
+        "name": "Room B",
+        "subject": "literature"
+    },
+    {
+        "id": 3,
+        "name": "Room C",
+        "subject": "geography"
+    },
+    {
+        "id": 4,
+        "name": "Room D",
+        "subject": "biology"
+    },
+    {
+        "id": 5,
+        "name": "Room E",
+        "subject": "history"
+    },
+    {
+        "id": 6,
+        "name": "Room F",
+        "subject": "music"
+    },
+    {
+        "id": 7,
+        "name": "Room G",
+        "subject": "technology"
+    },
+    {
+        "id": 8,
+        "name": "Room H",
+        "subject": "other"
+    }
+]

@@ -1,9 +1,9 @@
 import { Field, Form } from "react-final-form";
-import { mockedRooms } from "@constants/mockedData";
 import SelectAdapter from "./components/SelectAdapter";
 import styles from "./AddStudent.module.scss";
 import { ageOptions } from "utils/forms/ageOptions";
 import { useModalStore } from "store/useModalStore";
+import { mockedRooms } from "utils/mocks/mockedData";
 
 const AddStudent = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();

@@ -1,4 +1,4 @@
-import { mockedStudents } from "@constants/mockedData";
+import { mockedStudents } from "utils/mocks/mockedData";
 import styles from "./StudentsData.module.scss";
 import StudentsTable from "../../shared/StudentsTable";
 import CreateButton from "@components/shared/CreateButton";
