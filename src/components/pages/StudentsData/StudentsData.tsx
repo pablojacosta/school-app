@@ -3,6 +3,8 @@ import StudentsTable from "../../shared/StudentsTable";
 import CreateButton from "@components/shared/CreateButton";
 import useGetStudents from "hooks/students/useGetStudents";
 import styles from "./StudentsData.module.scss";
+import ErrorMessage from "@components/shared/ErrorMessage";
+import { AxiosError } from "axios";
 
 const StudentsData = () => {
   const { students, studentsError, studentsIsLoading } = useGetStudents();
@@ -19,6 +21,7 @@ const StudentsData = () => {
           <TailSpin />
         </div>
       )}
+      {(studentsError as AxiosError) && <ErrorMessage />}
     </div>
   );
 };
