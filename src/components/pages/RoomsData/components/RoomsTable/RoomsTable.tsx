@@ -11,7 +11,6 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
   return (
     <div className={styles.roomsTable}>
       <div className={styles.tableHeader}>
-        <p className={styles.id}>ID</p>
         <p className={styles.name}>NAME</p>
         <p className={styles.students}>STUDENTS</p>
         <p className={styles.subject}>SUBJECT</p>
@@ -32,7 +31,6 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
               {studentsIsLoading && <Spinner />}
               {showRoomsTable && (
                 <li className={styles.row} key={id}>
-                  <p className={styles.id}>{id}</p>
                   <p className={styles.name}>{name}</p>
                   <p className={styles.students}>{fileteredStudents?.length}</p>
                   <p className={styles.subject}>{subject}</p>
