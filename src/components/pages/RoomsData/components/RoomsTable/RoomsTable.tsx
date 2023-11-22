@@ -2,9 +2,11 @@ import { IRoomsTable } from "interfaces/RoomsTable";
 import styles from "./RoomsTable.module.scss";
 import RoomManage from "../RoomManage";
 import useGetStudents from "hooks/students/useGetStudents";
+import Spinner from "@components/shared/Spinner";
+import ErrorMessage from "@components/shared/ErrorMessage";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
-  const { students } = useGetStudents();
+  const { students, studentsIsLoading, studentsError } = useGetStudents();
 
   return (
     <div className={styles.roomsTable}>
@@ -22,16 +24,22 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
             (student) => student.room === name
           );
 
+          const showRoomsTable = students && fileteredStudents;
+
           return (
-            <li className={styles.row} key={name}>
-              <p className={styles.id}>{id}</p>
-              <p className={styles.name}>{name}</p>
-              <p className={styles.students}>{students?.length}</p>
-              <p className={styles.subject}>{subject}</p>
-              {fileteredStudents && (
-                <RoomManage room={room} students={fileteredStudents} />
+            <>
+              {studentsError && <ErrorMessage />}
+              {studentsIsLoading && <Spinner />}
+              {showRoomsTable && (
+                <li className={styles.row} key={name}>
+                  <p className={styles.id}>{id}</p>
+                  <p className={styles.name}>{name}</p>
+                  <p className={styles.students}>{fileteredStudents?.length}</p>
+                  <p className={styles.subject}>{subject}</p>
+                  <RoomManage room={room} students={fileteredStudents} />
+                </li>
               )}
-            </li>
+            </>
           );
         })}
       </ul>
