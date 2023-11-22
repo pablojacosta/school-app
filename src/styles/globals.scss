@@ -1,0 +1,50 @@
+@use "./_colors.scss";
+@use "./_fonts.scss";
+@use "@styles/_responsives" as responsives;
+
+:root {
+  --font-primary: #{fonts.$fontPrimary};
+
+  --color-white: #{colors.$colorWhite};
+  --color-black: #{colors.$colorBlack};
+  --color-gray: #{colors.$colorGray};
+  --color-blue: #{colors.$colorBlue};
+  --color-yellow: #{colors.$colorYellow};
+  --color-red: #{colors.$colorRed};
+  --color-green: #{colors.$colorGreen};
+  --color-background: #{colors.$colorBackground};
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: #646777;
+  font-family: var(--font-primary);
+}
+
+h1,
+h2 {
+  margin: 0 0 2rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+}

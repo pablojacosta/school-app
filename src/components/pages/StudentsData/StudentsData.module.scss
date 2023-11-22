@@ -1,0 +1,9 @@
+@use "@styles/_mixins" as mixins;
+
+.studentsData {
+  @include mixins.flex_container(column, center, center);
+
+  .spinner {
+    margin-top: 4rem;
+  }
+}

@@ -1,0 +1,25 @@
+@use "@styles/_mixins" as mixins;
+
+.goBackButton {
+  button {
+    @include mixins.flex_container(row, center, center);
+    gap: 0.5rem;
+    background-color: var(--color-yellow);
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 2rem;
+    color: var(--color-gray);
+    line-height: 1.5rem;
+    margin-top: 2rem;
+
+    span {
+      line-height: 0.7rem;
+    }
+
+    &:hover {
+      background-color: var(--color-green);
+    }
+  }
+}

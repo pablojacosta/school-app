@@ -1,0 +1,14 @@
+@use "@styles/_mixins" as mixins;
+
+.roomDetails {
+  @include mixins.flex_container(column, center, center);
+
+  .name {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .subject {
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,9 @@
+@use "@styles/_mixins" as mixins;
+
+.intro {
+  @include mixins.flex_container(column, center, center);
+
+  .intro__text {
+    text-align: left;
+  }
+}

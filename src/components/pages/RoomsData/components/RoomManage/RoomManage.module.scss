@@ -1,0 +1,36 @@
+@use "@styles/_mixins" as mixins;
+
+.roomManage {
+  @include mixins.flex_container(row, center, center);
+  gap: 0.5rem;
+  width: 10rem;
+  position: relative;
+
+  button {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0.15rem solid var(--color-gray);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .viewButton {
+    background-color: var(--color-blue);
+  }
+
+  .modifyButton {
+    background-color: var(--color-yellow);
+  }
+
+  .deleteButton {
+    background-color: var(--color-red);
+  }
+
+  .spinner {
+    position: absolute;
+    right: -5%;
+    top: 20%;
+  }
+}

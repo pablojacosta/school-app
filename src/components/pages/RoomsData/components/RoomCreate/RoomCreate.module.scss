@@ -1,0 +1,60 @@
+@use "@styles/_mixins" as mixins;
+
+.roomCreate {
+  @include mixins.flex_container(column, center, center);
+
+  .form {
+    @include mixins.flex_container(column, center, flex-start);
+    gap: 2rem;
+    outline: 0.2rem solid var(--color-gray);
+    border-radius: 0.5rem;
+    width: 24rem;
+    position: relative;
+
+    .field {
+      @include mixins.flex_container(row, center, center);
+      gap: 1rem;
+      padding-right: 1rem;
+
+      .label {
+        padding: 1rem;
+        width: 4rem;
+      }
+
+      .radio {
+        @include mixins.flex_container(column, center, flex-start);
+        gap: 0.5rem;
+      }
+
+      input {
+        border: 0.2rem solid var(--color-gray);
+        border-radius: 0.35rem;
+      }
+
+      span {
+        color: var(--color-red);
+      }
+    }
+
+    .submitButton {
+      align-self: center;
+      background-color: var(--color-green);
+      height: 2rem;
+      width: 4rem;
+      border-radius: 0.5rem;
+      border: none;
+      margin-bottom: 1rem;
+      color: var(--color-gray);
+
+      &:hover {
+        background-color: var(--color-yellow);
+      }
+    }
+
+    .spinner {
+      position: absolute;
+      right: 32%;
+      top: 89%;
+    }
+  }
+}
