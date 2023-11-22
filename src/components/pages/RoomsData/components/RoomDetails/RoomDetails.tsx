@@ -1,6 +1,7 @@
 import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import styles from "./RoomDetails.module.scss";
 import StudentsTable from "@components/shared/StudentsTable";
+import NoStudentsMessage from "./components/NoStudentsMessage";
 
 const RoomDetails = () => {
   const { room } = useSelectedRoomStore();
@@ -11,7 +12,11 @@ const RoomDetails = () => {
       <h1>Room Details</h1>
       <h2 className={styles.name}>Name: {name}</h2>
       <h2 className={styles.subject}>Subject: {subject}</h2>
-      <StudentsTable studentsData={students} />
+      {students.length ? (
+        <StudentsTable studentsData={students} />
+      ) : (
+        <NoStudentsMessage />
+      )}
     </div>
   );
 };
