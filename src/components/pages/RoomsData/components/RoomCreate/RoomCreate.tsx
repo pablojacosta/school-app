@@ -1,11 +1,15 @@
 import { Field, Form } from "react-final-form";
-import styles from "./RoomCreate.module.scss";
 import { useModalStore } from "store/useModalStore";
+import styles from "./RoomCreate.module.scss";
+import useCreateRoom from "hooks/rooms/useCreateRoom";
+import { IRoom } from "interfaces/Room";
 
 const RoomCreate = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
+  const { roomMutate } = useCreateRoom();
 
-  const onSubmit = () => {
+  const onSubmit = ({ name, subject }: IRoom) => {
+    roomMutate({ name, subject });
     setShowModal(true);
     setIsSuccess(true);
     setIsRoom(false);
@@ -21,7 +25,7 @@ const RoomCreate = () => {
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.field}>
-              <Field name="roomName" validate={required}>
+              <Field name="name" validate={required}>
                 {({ input, meta }) => (
                   <>
                     <label className={styles.label}>Name</label>

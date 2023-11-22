@@ -7,12 +7,16 @@ import styles from "./AddStudent.module.scss";
 import useGetRooms from "hooks/rooms/useGetRooms";
 import Spinner from "@components/shared/Spinner";
 import ErrorMessage from "@components/shared/ErrorMessage";
+import useCreateStudent from "hooks/students/useCreateStudent";
+import { IStudent } from "interfaces/Student";
 
 const AddStudent = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
   const { rooms, roomsIsLoading, roomsError } = useGetRooms();
+  const { studentMutate } = useCreateStudent();
 
-  const onSubmit = () => {
+  const onSubmit = ({ firstName, lastName, gender, age, room }: IStudent) => {
+    studentMutate({ firstName, lastName, gender, age, room });
     setShowModal(true);
     setIsSuccess(true);
     setIsRoom(false);

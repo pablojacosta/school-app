@@ -1,7 +1,8 @@
 import { TGender } from "types/Gender";
 
 export interface IStudent {
-  name: string;
+  firstName: string;
+  lastName: string;
   age: number;
   gender: TGender;
   room: string;

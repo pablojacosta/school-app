@@ -31,7 +31,7 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
               {studentsError && <ErrorMessage />}
               {studentsIsLoading && <Spinner />}
               {showRoomsTable && (
-                <li className={styles.row} key={name}>
+                <li className={styles.row} key={id}>
                   <p className={styles.id}>{id}</p>
                   <p className={styles.name}>{name}</p>
                   <p className={styles.students}>{fileteredStudents?.length}</p>
