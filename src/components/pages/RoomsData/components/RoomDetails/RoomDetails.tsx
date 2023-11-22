@@ -2,6 +2,7 @@ import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import styles from "./RoomDetails.module.scss";
 import StudentsTable from "@components/shared/StudentsTable";
 import NoStudentsMessage from "./components/NoStudentsMessage";
+import GoBackButton from "@components/shared/GoBackButton";
 
 const RoomDetails = () => {
   const { room } = useSelectedRoomStore();
@@ -17,6 +18,7 @@ const RoomDetails = () => {
       ) : (
         <NoStudentsMessage />
       )}
+      <GoBackButton />
     </div>
   );
 };
