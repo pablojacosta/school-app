@@ -1,29 +1,47 @@
 import { Field, Form } from "react-final-form";
 import { ageOptions } from "utils/forms/ageOptions";
 import { useModalStore } from "store/useModalStore";
+import { TailSpin } from "react-loader-spinner";
+import { IStudent } from "interfaces/Student";
 import SelectAdapter from "./components/SelectAdapter";
 import styles from "./AddStudent.module.scss";
-
 import useGetRooms from "hooks/rooms/useGetRooms";
 import Spinner from "@components/shared/Spinner";
 import ErrorMessage from "@components/shared/ErrorMessage";
 import useCreateStudent from "hooks/students/useCreateStudent";
-import { IStudent } from "interfaces/Student";
+import { useEffect } from "react";
 
 const AddStudent = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
   const { rooms, roomsIsLoading, roomsError } = useGetRooms();
-  const { studentMutate } = useCreateStudent();
+  const { studentMutate, studentIsError, studentIsLoading, studentIsSuccess } =
+    useCreateStudent();
 
   const onSubmit = ({ firstName, lastName, gender, age, room }: IStudent) => {
     studentMutate({ firstName, lastName, gender, age, room });
-    setShowModal(true);
-    setIsSuccess(true);
-    setIsRoom(false);
   };
 
   const required = (value: string | number | readonly string[] | undefined) =>
     value ? undefined : "Required";
+
+  useEffect(() => {
+    if (studentIsSuccess) {
+      setShowModal(true);
+      setIsSuccess(true);
+      setIsRoom(false);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [studentIsSuccess]);
+
+  useEffect(() => {
+    if (studentIsError) {
+      setShowModal(true);
+      setIsSuccess(false);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [studentIsError]);
 
   return (
     <>
@@ -131,6 +149,11 @@ const AddStudent = () => {
                 <button type="submit" className={styles.submitButton}>
                   Submit
                 </button>
+                {studentIsLoading && (
+                  <span className={styles.spinner}>
+                    <TailSpin height="20" width="20" />
+                  </span>
+                )}
               </form>
             )}
           </Form>
