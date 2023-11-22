@@ -19,7 +19,7 @@ const RoomManage = ({ room, students }: IRoomManage) => {
     deleteRoomIsError,
     deleteRoomIsLoading,
     deleteRoomIsSuccess,
-  } = useDeleteRoom(room.id);
+  } = useDeleteRoom(room.id!);
 
   const navigate = useNavigate();
 

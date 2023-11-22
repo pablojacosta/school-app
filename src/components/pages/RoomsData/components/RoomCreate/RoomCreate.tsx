@@ -5,6 +5,7 @@ import { IRoom } from "interfaces/Room";
 import { useEffect } from "react";
 import useCreateRoom from "hooks/rooms/useCreateRoom";
 import styles from "./RoomCreate.module.scss";
+import GoBackButton from "@components/shared/GoBackButton";
 
 const RoomCreate = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
@@ -143,6 +144,7 @@ const RoomCreate = () => {
           </form>
         )}
       </Form>
+      <GoBackButton />
     </div>
   );
 };

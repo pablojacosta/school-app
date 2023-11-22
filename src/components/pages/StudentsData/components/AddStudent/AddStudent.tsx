@@ -10,6 +10,7 @@ import Spinner from "@components/shared/Spinner";
 import ErrorMessage from "@components/shared/ErrorMessage";
 import useCreateStudent from "hooks/students/useCreateStudent";
 import { useEffect } from "react";
+import GoBackButton from "@components/shared/GoBackButton";
 
 const AddStudent = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
@@ -157,6 +158,7 @@ const AddStudent = () => {
               </form>
             )}
           </Form>
+          <GoBackButton />
         </div>
       )}
     </>
