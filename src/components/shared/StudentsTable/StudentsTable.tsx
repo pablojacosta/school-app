@@ -15,11 +15,11 @@ const StudentsTable = ({ studentsData, showRoom }: IStudentsTable) => {
       </div>
       <ul className={styles.tableBody}>
         {studentsData.map((student: IStudent) => {
-          const { name, age, gender, room } = student;
+          const { firstName, lastName, age, gender, room } = student;
 
           return (
-            <li className={styles.row} key={name}>
-              <p className={styles.name}>{name}</p>
+            <li className={styles.row} key={`${firstName} ${lastName}`}>
+              <p className={styles.name}>{`${firstName} ${lastName}`}</p>
               <p className={styles.age}>{age}</p>
               <p className={styles.gender}>{gender}</p>
               {showRoom && <p className={styles.room}>{room}</p>}
