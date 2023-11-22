@@ -7,41 +7,44 @@ import ErrorMessage from "@components/shared/ErrorMessage";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
   const { students, studentsIsLoading, studentsError } = useGetStudents();
+  const showRoomsTable = students && !studentsIsLoading && !studentsError;
 
   return (
-    <div className={styles.roomsTable}>
-      <div className={styles.tableHeader}>
-        <p className={styles.name}>NAME</p>
-        <p className={styles.students}>STUDENTS</p>
-        <p className={styles.subject}>SUBJECT</p>
-        <p className={styles.manage}>VIEW / REMOVE</p>
-      </div>
-      <ul className={styles.tableBody}>
-        {roomsData.map((room) => {
-          const { id, name, subject } = room;
-          const fileteredStudents = students?.filter(
-            (student) => student.room === name
-          );
+    <>
+      {studentsError && <ErrorMessage />}
+      {studentsIsLoading && <Spinner />}
+      {showRoomsTable && (
+        <div className={styles.roomsTable}>
+          <div className={styles.tableHeader}>
+            <p className={styles.name}>NAME</p>
+            <p className={styles.students}>STUDENTS</p>
+            <p className={styles.subject}>SUBJECT</p>
+            <p className={styles.manage}>VIEW / REMOVE</p>
+          </div>
+          <ul className={styles.tableBody}>
+            {roomsData.map((room) => {
+              const { id, name, subject } = room;
+              const fileteredStudents = students.filter(
+                (student) => student.room === name
+              );
 
-          const showRoomsTable = students && fileteredStudents;
-
-          return (
-            <>
-              {studentsError && <ErrorMessage />}
-              {studentsIsLoading && <Spinner />}
-              {showRoomsTable && (
-                <li className={styles.row} key={id}>
-                  <p className={styles.name}>{name}</p>
-                  <p className={styles.students}>{fileteredStudents?.length}</p>
-                  <p className={styles.subject}>{subject}</p>
-                  <RoomManage room={room} students={fileteredStudents} />
-                </li>
-              )}
-            </>
-          );
-        })}
-      </ul>
-    </div>
+              return (
+                <>
+                  <li className={styles.row} key={id}>
+                    <p className={styles.name}>{name}</p>
+                    <p className={styles.students}>
+                      {fileteredStudents.length}
+                    </p>
+                    <p className={styles.subject}>{subject}</p>
+                    <RoomManage room={room} students={fileteredStudents} />
+                  </li>
+                </>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 
