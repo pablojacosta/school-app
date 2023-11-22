@@ -9,6 +9,7 @@
     outline: 0.2rem solid var(--color-gray);
     border-radius: 0.5rem;
     width: 24rem;
+    position: relative;
 
     .field {
       @include mixins.flex_container(row, center, center);
@@ -48,6 +49,12 @@
       &:hover {
         background-color: var(--color-yellow);
       }
+    }
+
+    .spinner {
+      position: absolute;
+      right: 32%;
+      top: 89%;
     }
   }
 }

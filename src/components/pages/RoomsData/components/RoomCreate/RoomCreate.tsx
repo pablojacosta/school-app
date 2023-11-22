@@ -1,22 +1,41 @@
 import { Field, Form } from "react-final-form";
 import { useModalStore } from "store/useModalStore";
-import styles from "./RoomCreate.module.scss";
-import useCreateRoom from "hooks/rooms/useCreateRoom";
+import { TailSpin } from "react-loader-spinner";
 import { IRoom } from "interfaces/Room";
+import { useEffect } from "react";
+import useCreateRoom from "hooks/rooms/useCreateRoom";
+import styles from "./RoomCreate.module.scss";
 
 const RoomCreate = () => {
   const { setShowModal, setIsSuccess, setIsRoom } = useModalStore();
-  const { roomMutate } = useCreateRoom();
+  const { roomMutate, roomIsError, roomIsSuccess, roomIsLoading } =
+    useCreateRoom();
 
   const onSubmit = ({ name, subject }: IRoom) => {
     roomMutate({ name, subject });
-    setShowModal(true);
-    setIsSuccess(true);
-    setIsRoom(false);
   };
 
   const required = (value: string | number | readonly string[] | undefined) =>
     value ? undefined : "Required";
+
+  useEffect(() => {
+    if (roomIsSuccess) {
+      setShowModal(true);
+      setIsSuccess(true);
+      setIsRoom(true);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roomIsSuccess]);
+
+  useEffect(() => {
+    if (roomIsError) {
+      setShowModal(true);
+      setIsSuccess(false);
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roomIsError]);
 
   return (
     <div className={styles.roomCreate}>
@@ -116,6 +135,11 @@ const RoomCreate = () => {
             <button type="submit" className={styles.submitButton}>
               Submit
             </button>
+            {roomIsLoading && (
+              <span className={styles.spinner}>
+                <TailSpin height="20" width="20" />
+              </span>
+            )}
           </form>
         )}
       </Form>
