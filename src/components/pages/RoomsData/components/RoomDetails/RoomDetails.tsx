@@ -6,8 +6,6 @@ const RoomDetails = () => {
   const { room } = useSelectedRoomStore();
   const { name, students, subject } = room;
 
-  console.log("room", room);
-
   return (
     <div className={styles.roomDetails}>
       <h1>Room Details</h1>

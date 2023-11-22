@@ -1,9 +1,11 @@
 import { IRoomsTable } from "interfaces/RoomsTable";
 import styles from "./RoomsTable.module.scss";
 import RoomManage from "../RoomManage";
-import { mockedStudents } from "utils/mocks/mockedData";
+import useGetStudents from "hooks/students/useGetStudents";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
+  const { students } = useGetStudents();
+
   return (
     <div className={styles.roomsTable}>
       <div className={styles.tableHeader}>
@@ -16,7 +18,7 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
       <ul className={styles.tableBody}>
         {roomsData.map((room) => {
           const { id, name, subject } = room;
-          const students = mockedStudents.filter(
+          const fileteredStudents = students?.filter(
             (student) => student.room === name
           );
 
@@ -24,9 +26,11 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
             <li className={styles.row} key={name}>
               <p className={styles.id}>{id}</p>
               <p className={styles.name}>{name}</p>
-              <p className={styles.students}>{students.length}</p>
+              <p className={styles.students}>{students?.length}</p>
               <p className={styles.subject}>{subject}</p>
-              <RoomManage room={room} students={students} />
+              {fileteredStudents && (
+                <RoomManage room={room} students={fileteredStudents} />
+              )}
             </li>
           );
         })}

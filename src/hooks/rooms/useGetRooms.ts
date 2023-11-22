@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { roomsConfig } from "utils/axiosConfig/rooms/roomsConfig";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { IRoom } from "interfaces/Room";
 
 const getRooms = async () => {
   const response = await axios(roomsConfig);
@@ -12,7 +13,10 @@ const useGetRooms = () => {
     data: rooms,
     error: roomsError,
     isLoading: roomsIsLoading,
-  } = useQuery("roomsData", getRooms);
+  } = useQuery<boolean, AxiosError, IRoom[], "roomsData">(
+    "roomsData",
+    getRooms
+  );
 
   return { rooms, roomsError, roomsIsLoading };
 };

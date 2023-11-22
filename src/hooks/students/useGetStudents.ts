@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { studentsConfig } from "utils/axiosConfig/students/studentsConfig";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { IStudent } from "interfaces/Student";
 
 const getStudents = async () => {
   const response = await axios(studentsConfig);
@@ -12,7 +13,10 @@ const useGetStudents = () => {
     data: students,
     error: studentsError,
     isLoading: studentsIsLoading,
-  } = useQuery("studentsData", getStudents);
+  } = useQuery<boolean, AxiosError, IStudent[], "studentsData">(
+    "studentsData",
+    getStudents
+  );
 
   return { students, studentsError, studentsIsLoading };
 };

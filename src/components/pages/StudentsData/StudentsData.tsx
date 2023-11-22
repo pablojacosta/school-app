@@ -1,26 +1,22 @@
-import { TailSpin } from "react-loader-spinner";
+import { AxiosError } from "axios";
 import StudentsTable from "../../shared/StudentsTable";
 import CreateButton from "@components/shared/CreateButton";
 import useGetStudents from "hooks/students/useGetStudents";
 import styles from "./StudentsData.module.scss";
 import ErrorMessage from "@components/shared/ErrorMessage";
-import { AxiosError } from "axios";
+import Spinner from "@components/shared/Spinner";
 
 const StudentsData = () => {
   const { students, studentsError, studentsIsLoading } = useGetStudents();
 
-  const showStudentsTable = !studentsIsLoading && !studentsError;
+  const showStudentsTable = !studentsIsLoading && !studentsError && students;
 
   return (
     <div className={styles.studentsData}>
       <h1>Students</h1>
       <CreateButton isRoom={false} />
       {showStudentsTable && <StudentsTable studentsData={students} showRoom />}
-      {studentsIsLoading && (
-        <div className={styles.spinner}>
-          <TailSpin />
-        </div>
-      )}
+      {studentsIsLoading && <Spinner />}
       {(studentsError as AxiosError) && <ErrorMessage />}
     </div>
   );

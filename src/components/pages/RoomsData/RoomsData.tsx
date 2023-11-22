@@ -1,26 +1,22 @@
-import { TailSpin } from "react-loader-spinner";
+import { AxiosError } from "axios";
 import RoomsTable from "./components/RoomsTable";
 import styles from "./RoomsData.module.scss";
 import CreateButton from "../../shared/CreateButton";
 import useGetRooms from "hooks/rooms/useGetRooms";
-import { AxiosError } from "axios";
 import ErrorMessage from "@components/shared/ErrorMessage";
+import Spinner from "@components/shared/Spinner";
 
 const RoomsData = () => {
   const { rooms, roomsError, roomsIsLoading } = useGetRooms();
 
-  const showRoomsTable = !roomsIsLoading && !roomsError;
+  const showRoomsTable = !roomsIsLoading && !roomsError && rooms;
 
   return (
     <div className={styles.roomsData}>
       <h1>Rooms</h1>
       <CreateButton isRoom />
       {showRoomsTable && <RoomsTable roomsData={rooms} />}
-      {roomsIsLoading && (
-        <div className={styles.spinner}>
-          <TailSpin />
-        </div>
-      )}
+      {roomsIsLoading && <Spinner />}
       {(roomsError as AxiosError) && <ErrorMessage />}
     </div>
   );
