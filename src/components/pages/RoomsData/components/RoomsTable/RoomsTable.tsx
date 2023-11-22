@@ -29,16 +29,12 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
               );
 
               return (
-                <>
-                  <li className={styles.row} key={id}>
-                    <p className={styles.name}>{name}</p>
-                    <p className={styles.students}>
-                      {fileteredStudents.length}
-                    </p>
-                    <p className={styles.subject}>{subject}</p>
-                    <RoomManage room={room} students={fileteredStudents} />
-                  </li>
-                </>
+                <li className={styles.row} key={id}>
+                  <p className={styles.name}>{name}</p>
+                  <p className={styles.students}>{fileteredStudents.length}</p>
+                  <p className={styles.subject}>{subject}</p>
+                  <RoomManage room={room} students={fileteredStudents} />
+                </li>
               );
             })}
           </ul>

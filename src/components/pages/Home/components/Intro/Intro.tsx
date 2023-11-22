@@ -11,8 +11,8 @@ const Intro = () => {
           rooms.
         </p>
         <p>
-          In the "Students" section you can add, edit and remove students from
-          Rather Labs' School App system.
+          In the "Students" section you can view all student's info and add
+          students to the system.
         </p>
       </div>
     </div>
