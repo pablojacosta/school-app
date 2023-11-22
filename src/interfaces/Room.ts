@@ -1,7 +1,7 @@
 import { TSubject } from "types/Subject";
 
 export interface IRoom {
-  id?: number;
+  id: number;
   name: string;
   subject: TSubject;
 }

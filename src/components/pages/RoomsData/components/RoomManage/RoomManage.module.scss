@@ -4,6 +4,7 @@
   @include mixins.flex_container(row, center, center);
   gap: 0.5rem;
   width: 10rem;
+  position: relative;
 
   button {
     height: 2.5rem;
@@ -25,5 +26,11 @@
 
   .deleteButton {
     background-color: var(--color-red);
+  }
+
+  .spinner {
+    position: absolute;
+    right: -5%;
+    top: 20%;
   }
 }
