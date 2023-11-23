@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# SCHOOL APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! I'm Pablo Acosta and this is my code for Rather Labs' tech challenge.
 
-Currently, two official plugins are available:
+The app is deployed to https://room-manager-school-app.netlify.app/ so you can try it out.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get it working I built a little backend deployed to https://school-app-back.onrender.com.
+I built the database using MongoDB Atlas, the Mongo Data API for Atlas and MongoDB Compass.
+You can check the rooms saved in the db in: https://school-app-back.onrender.com/rooms
+You can check the students saved in the db in: https://school-app-back.onrender.com/students
+You can find the backend repo here: https://github.com/pablojacosta/school-app-back
 
-## Expanding the ESLint configuration
+I made a little video showing the app working: https://recordit.co/J4Pr9OKbmm
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+As the app is deployed and working, you won't need the used environment variables, but I'll show you images of those variables on Netlify and OnRender:
+On the frontend I only added the backend url as an env variable:
+![image](https://github.com/pablojacosta/school-app/assets/67295442/a2307576-b184-44c9-a3ef-34261576d741)
+On the backend I added all the MongoDb database variables:
+![image](https://github.com/pablojacosta/school-app/assets/67295442/aef8afff-edd0-42bc-9ae4-de4a0750c9f8)
 
-- Configure the top-level `parserOptions` property like this:
+Please, take into account that OnRender's servers "sleep" when they are not being used, so the first time you check the app, the first request to the server will take a little bit of time, but then it will work
+as expected.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+I hope you like my code :D.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Thank you very much for this opportunity!
