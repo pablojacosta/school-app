@@ -1,11 +1,9 @@
 @use "@styles/_mixins" as mixins;
+@use "@styles/_responsives" as responsives;
 
 .studentsTable {
-  width: 50rem;
-
-  &.showRoom {
-    width: 55rem;
-  }
+  max-width: 50rem;
+  width: 100%;
 
   ul {
     padding: 0;
@@ -26,15 +24,18 @@
     }
 
     .name {
-      width: 20rem;
+      max-width: 20rem;
+      width: 100%;
     }
 
     .age {
-      width: 4rem;
+      max-width: 4rem;
+      width: 100%;
     }
 
     .gender {
-      width: 10rem;
+      max-width: 10rem;
+      width: 100%;
     }
   }
 
@@ -59,16 +60,109 @@
       }
 
       .name {
-        width: 20rem;
+        max-width: 20rem;
+        width: 100%;
       }
 
       .age {
-        width: 4rem;
+        max-width: 4rem;
+        width: 100%;
       }
 
       .gender {
-        width: 10rem;
+        max-width: 10rem;
+        width: 100%;
         text-transform: capitalize;
+      }
+    }
+  }
+
+  &.showRoom {
+    max-width: 55rem;
+
+    .tableHeader {
+      .room {
+        max-width: 6rem;
+        width: 100%;
+      }
+    }
+
+    .tableBody {
+      .row {
+        .room {
+          max-width: 6rem;
+          width: 100%;
+        }
+      }
+    }
+
+    @include responsives.resolution__laptop__s {
+      .tableHeader {
+        .room {
+          padding-right: 1rem;
+        }
+      }
+    }
+
+    @include responsives.resolution__mobile__m {
+      .tableHeader {
+        p {
+          font-size: 0.7rem;
+        }
+      }
+
+      .tableBody {
+        .row {
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsives.resolution__mobile__m {
+    .tableHeader {
+      gap: 2rem;
+
+      .name,
+      .gender {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .tableBody {
+      .row {
+        gap: 2rem;
+
+        .name,
+        .gender {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  @include responsives.resolution__mobile {
+    .tableHeader {
+      gap: 1rem;
+    }
+
+    .tableBody {
+      .row {
+        gap: 1rem;
+      }
+    }
+  }
+
+  @include responsives.resolution__mobile__s {
+    .tableHeader {
+      gap: 0;
+    }
+
+    .tableBody {
+      .row {
+        gap: 0;
       }
     }
   }

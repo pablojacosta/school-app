@@ -1,9 +1,38 @@
 @use "@styles/_mixins" as mixins;
+@use "@styles/_responsives" as responsives;
 
 .intro {
   @include mixins.flex_container(column, center, center);
 
   .intro__text {
     text-align: left;
+  }
+
+  @include responsives.resolution__tablet {
+    .intro__text {
+      width: 25rem;
+    }
+  }
+
+  @include responsives.resolution__mobile {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .intro__text {
+      width: 18rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  @include responsives.resolution__mobile__s {
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    .intro__text {
+      width: 15rem;
+      font-size: 0.8rem;
+    }
   }
 }
