@@ -1,7 +1,9 @@
 @use "@styles/_mixins" as mixins;
+@use "@styles/_responsives" as responsives;
 
 .roomsTable {
-  width: 50rem;
+  max-width: 50rem;
+  width: 100%;
 
   ul {
     padding: 0;
@@ -22,26 +24,34 @@
     }
 
     .name {
-      width: 10rem;
+      max-width: 10rem;
+      min-width: 3rem;
+      width: 100%;
     }
 
     .students {
-      width: 7rem;
+      max-width: 7rem;
+      min-width: 4rem;
+      width: 100%;
     }
 
     .subject {
-      width: 6rem;
+      max-width: 6rem;
+      min-width: 4rem;
+      width: 100%;
     }
 
     .manage {
-      width: 10rem;
+      max-width: 10rem;
+      min-width: 8rem;
+      width: 100%;
     }
   }
 
   .tableBody {
     max-height: 20.5rem;
     border: 0.15rem solid var(--color-gray);
-    overflow-y: auto;
+    overflow: auto;
 
     .row {
       @include mixins.flex_container(row, flex-start, center);
@@ -59,19 +69,93 @@
       }
 
       .name {
-        width: 10rem;
+        max-width: 10rem;
+        min-width: 3rem;
+        width: 100%;
       }
 
       .students {
-        width: 7rem;
+        max-width: 7rem;
+        min-width: 4rem;
+        width: 100%;
       }
 
       .subject {
-        width: 6rem;
+        max-width: 6rem;
+        min-width: 4rem;
+        width: 100%;
+      }
+    }
+  }
+
+  @include responsives.resolution__tablet {
+    max-width: 40rem;
+
+    .tableHeader {
+      gap: 2rem;
+
+      p {
+        font-size: 0.7rem;
       }
 
       .manage {
-        width: 10rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .tableBody {
+      .row {
+        gap: 2rem;
+
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+
+  @include responsives.resolution__tablet__s {
+    max-width: 30rem;
+  }
+
+  @include responsives.resolution__mobile__l {
+    max-width: 28rem;
+
+    .tableHeader {
+      gap: 1rem;
+    }
+
+    .tableBody {
+      .row {
+        gap: 1rem;
+      }
+    }
+  }
+
+  @include responsives.resolution__mobile__m {
+    max-width: 25rem;
+
+    .tableHeader {
+      gap: 1rem;
+    }
+
+    .tableBody {
+      .row {
+        gap: 1rem;
+      }
+    }
+  }
+
+  @include responsives.resolution__mobile {
+    max-width: 20rem;
+
+    .tableHeader {
+      gap: 0;
+    }
+
+    .tableBody {
+      .row {
+        gap: 0;
       }
     }
   }

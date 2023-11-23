@@ -2,6 +2,7 @@
 
 .studentsData {
   @include mixins.flex_container(column, center, center);
+  margin: 0 2rem;
 
   .spinner {
     margin-top: 4rem;

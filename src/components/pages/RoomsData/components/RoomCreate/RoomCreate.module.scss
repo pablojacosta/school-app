@@ -1,4 +1,5 @@
 @use "@styles/_mixins" as mixins;
+@use "@styles/_responsives" as responsives;
 
 .roomCreate {
   @include mixins.flex_container(column, center, center);
@@ -55,6 +56,18 @@
       position: absolute;
       right: 32%;
       top: 89%;
+    }
+  }
+
+  @include responsives.resolution__mobile {
+    .form {
+      max-width: 20rem;
+    }
+  }
+
+  @include responsives.resolution__mobile__s {
+    .form {
+      max-width: 19rem;
     }
   }
 }

@@ -1,5 +1,6 @@
 @use "@styles/_mixins" as mixins;
 @use "@styles/_colors" as colors;
+@use "@styles/_responsives" as responsives;
 
 .links {
   margin-top: 6rem;
@@ -19,6 +20,22 @@
       transform: scale(1.1);
       color: var(--color-black);
       outline: 0.5rem solid var(--color-black);
+    }
+  }
+
+  @include responsives.resolution__tablet {
+    margin-top: 3rem;
+
+    &__rooms,
+    &__students {
+      font-size: 3rem;
+    }
+  }
+
+  @include responsives.resolution__mobile {
+    &__rooms,
+    &__students {
+      font-size: 2rem;
     }
   }
 }

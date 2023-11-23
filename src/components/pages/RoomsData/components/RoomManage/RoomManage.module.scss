@@ -3,7 +3,9 @@
 .roomManage {
   @include mixins.flex_container(row, center, center);
   gap: 0.5rem;
-  width: 10rem;
+  max-width: 10rem;
+  min-width: 8rem;
+  width: 100%;
   position: relative;
 
   button {
