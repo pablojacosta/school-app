@@ -3,7 +3,7 @@ import styles from "./Intro.module.scss";
 const Intro = () => {
   return (
     <div className={styles.intro}>
-      <h1>SCHOOL APP</h1>
+      <h1>ROOM APP</h1>
       <div className={styles.intro__text}>
         <p>Hi! Welcome to Room Manager - School App.</p>
         <p>
