@@ -5,7 +5,7 @@ const Intro = () => {
     <div className={styles.intro}>
       <h1>SCHOOL APP</h1>
       <div className={styles.intro__text}>
-        <p>Hi! Welcome to Room School App.</p>
+        <p>Hi! Welcome to Room Manager - School App.</p>
         <p>
           In the "Rooms" section you'll be able to overview, create and delete
           rooms.
