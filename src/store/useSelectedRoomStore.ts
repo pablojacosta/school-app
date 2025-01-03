@@ -1,7 +1,7 @@
-import { emptyRoom } from "utils/helpers/emptyRoom";
 import { IRoom } from "interfaces/Room";
 import { IRoomWithStudents } from "interfaces/RoomWithStudents";
 import { IStudent } from "interfaces/Student";
+import { emptyRoom } from "utils/helpers/emptyRoom";
 import { create } from "zustand";
 
 interface ISelectedRoomStore {
@@ -20,7 +20,7 @@ export const useSelectedRoomStore = create<ISelectedRoomStore>()((set) => ({
     set((state) => ({
       ...state,
       room: {
-        id: room.id,
+        id: room._id,
         name: room.name,
         subject: room.subject,
         students,
