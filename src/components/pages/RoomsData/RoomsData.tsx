@@ -1,11 +1,11 @@
+import ErrorMessage from "@components/shared/ErrorMessage";
+import GoBackButton from "@components/shared/GoBackButton";
+import Spinner from "@components/shared/Spinner";
 import { AxiosError } from "axios";
+import useGetRooms from "hooks/rooms/useGetRooms";
+import CreateButton from "../../shared/CreateButton";
 import RoomsTable from "./components/RoomsTable";
 import styles from "./RoomsData.module.scss";
-import CreateButton from "../../shared/CreateButton";
-import useGetRooms from "hooks/rooms/useGetRooms";
-import ErrorMessage from "@components/shared/ErrorMessage";
-import Spinner from "@components/shared/Spinner";
-import GoBackButton from "@components/shared/GoBackButton";
 
 const RoomsData = () => {
   const { rooms, roomsError, roomsIsLoading } = useGetRooms();

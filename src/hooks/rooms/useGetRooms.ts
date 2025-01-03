@@ -1,11 +1,12 @@
-import { useQuery } from "react-query";
-import { roomsConfig } from "utils/axiosConfig/rooms/roomsConfig";
 import axios, { AxiosError } from "axios";
 import { IRoom } from "interfaces/Room";
+import { useQuery } from "react-query";
+import { roomsConfig } from "utils/axiosConfig/rooms/roomsConfig";
 
 const getRooms = async () => {
   const response = await axios(roomsConfig);
-  return response.data.documents;
+
+  return response.data;
 };
 
 const useGetRooms = () => {
