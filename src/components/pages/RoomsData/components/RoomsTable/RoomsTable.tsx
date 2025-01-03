@@ -1,9 +1,9 @@
-import { IRoomsTable } from "interfaces/RoomsTable";
-import styles from "./RoomsTable.module.scss";
-import RoomManage from "../RoomManage";
-import useGetStudents from "hooks/students/useGetStudents";
-import Spinner from "@components/shared/Spinner";
 import ErrorMessage from "@components/shared/ErrorMessage";
+import Spinner from "@components/shared/Spinner";
+import useGetStudents from "hooks/students/useGetStudents";
+import { IRoomsTable } from "interfaces/RoomsTable";
+import RoomManage from "../RoomManage";
+import styles from "./RoomsTable.module.scss";
 
 const RoomsTable = ({ roomsData }: IRoomsTable) => {
   const { students, studentsIsLoading, studentsError } = useGetStudents();
@@ -23,7 +23,7 @@ const RoomsTable = ({ roomsData }: IRoomsTable) => {
           </div>
           <ul className={styles.tableBody}>
             {roomsData.map((room) => {
-              const { id, name, subject } = room;
+              const { _id: id, name, subject } = room;
               const fileteredStudents = students.filter(
                 (student) => student.room === name
               );

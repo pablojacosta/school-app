@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import { ROOM } from "@constants/routes/routes";
-import { useSelectedRoomStore } from "store/useSelectedRoomStore";
-import { IRoomManage } from "interfaces/RoomManage";
-import { TailSpin } from "react-loader-spinner";
-import { useModalStore } from "store/useModalStore";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import EyeIcon from "@components/elements/Icons/EyeIcon";
 import TrashIcon from "@components/elements/Icons/TrashIcon";
+import { ROOM } from "@constants/routes/routes";
 import useDeleteRoom from "hooks/rooms/useDeleteRoom";
+import { IRoomManage } from "interfaces/RoomManage";
+import { useEffect } from "react";
+import { TailSpin } from "react-loader-spinner";
+import { Link, useNavigate } from "react-router-dom";
+import { useModalStore } from "store/useModalStore";
+import { useSelectedRoomStore } from "store/useSelectedRoomStore";
 import styles from "./RoomManage.module.scss";
 
 const RoomManage = ({ room, students }: IRoomManage) => {
@@ -19,7 +18,7 @@ const RoomManage = ({ room, students }: IRoomManage) => {
     deleteRoomIsError,
     deleteRoomIsLoading,
     deleteRoomIsSuccess,
-  } = useDeleteRoom(room.id!);
+  } = useDeleteRoom(room._id ?? 0);
 
   const navigate = useNavigate();
 
