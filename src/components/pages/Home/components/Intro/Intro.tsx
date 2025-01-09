@@ -14,6 +14,11 @@ const Intro = () => {
           In the "Students" section you can view all student's info and add
           students to the system.
         </p>
+        <p>
+          IMPORTANT: Please, bear in mind that the backend is deployed at Render
+          on a free account, so you will experience a bit of delay on your first
+          request.
+        </p>
       </div>
     </div>
   );
